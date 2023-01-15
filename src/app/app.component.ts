@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CryptoApp';
+  selectedCurrency: string = 'PLN';
+
+  constructor(){
+
+  }
+
+  sendCurrency(event:string): void {
+    console.log(event);
+  }
 }
