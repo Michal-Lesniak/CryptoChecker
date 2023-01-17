@@ -1,1 +1,19 @@
-<p>coin-detail works!</p>
+<div class="container">
+    <div class="coin-info">
+        <div class="coin-header">
+            <img src={{coinData?.image.large}}>
+            <h2>{{coinData?.name}}</h2>
+        </div>
+        <div class="coin-description">
+            <h6 [innerHTML]="coinData?.description.en.split('. ')[0]"></h6>
+        </div>
+        <div class="coin-stats">
+            <span class="title">Rank: </span><span> {{coinData?.coingecko_rank}}</span><br>
+            <span class="title">Current Price: </span><span> {{coinData?.market_data.current_price.usd| currency}}</span><br>
+            <span class="title"> Market Cap: </span><span> {{coinData?.market_data.market_cap.usd | currency}}</span><br>
+        </div>
+    </div>
+    <div class="chart">
+       
+    </div>
+</div>
