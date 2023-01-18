@@ -2,13 +2,9 @@
     color: white    ;
 }
 
-.container{
-    width: 100%;
-    flex: 1 1 auto;
+.container-fluids{
     display: flex;
     flex-direction: row;
-    padding: 0;
-    margin: 0;
     border-top: 1px solid white;
 }
 
@@ -33,6 +29,25 @@
     margin: 20px;
 }
 
+.chart{
+    width: 70%;
+    padding: 20px;
+}
 
+.buttons{
+    display: flex;
+    justify-content: space-around ;
+}
 
+.btn-custom{
+    border: 1px solid white;
+    color: #fff;
+    background: transparent;
+    font-weight: 400;
+    font-size: 18px;
+    width: 23%;
+}
 
+.btn-custom:hover{
+    background: #009688;
+}

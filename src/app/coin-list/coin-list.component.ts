@@ -5,6 +5,7 @@ import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { MatFormFieldControl } from '@angular/material/form-field';
 import { Router } from '@angular/router';
+import { CurrencyService } from '../service/currency.service';
 
 
 @Component({
@@ -22,15 +23,19 @@ export class CoinListComponent implements OnInit{
   @ViewChild(MatSort) sort!: MatSort;
 
   banerData: any;
-  currency:string = 'USD';
+  currency:string = 'PLN';
 
-  constructor(private api:ApiService, private currentRoute:Router){
-
-  }
+  constructor(private api:ApiService, private currentRoute:Router, private currencyService:CurrencyService){}
 
   ngOnInit(): void {
     this.getBannerData();
     this.getAllData();
+    this.currencyService.getCurrency().subscribe( val =>
+      {this.currency=val;
+        this.getBannerData();
+        this.getAllData();
+      }
+    );
   }
 
   getBannerData(){
